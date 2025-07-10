@@ -41,6 +41,7 @@ body {
 }
 
 .hero-image-left img,
+.hero-image-left video,
 .hero-image-right img {
     width: 100%;
     height: 100%;
