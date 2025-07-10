@@ -42,18 +42,21 @@ body {
 
 .hero-image-left img,
 .hero-image-left video,
-.hero-image-right img {
+.hero-image-right img,
+.hero-image-right video {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
 /* Seamless video styling */
-.hero-image-left {
+.hero-image-left,
+.hero-image-right {
     position: relative;
 }
 
-.seamless-video {
+.seamless-video,
+.seamless-video-right {
     position: absolute;
     top: 0;
     left: 0;
@@ -64,7 +67,8 @@ body {
     transition: opacity 0.5s ease-in-out;
 }
 
-.seamless-video.active {
+.seamless-video.active,
+.seamless-video-right.active {
     opacity: 1;
 }
 

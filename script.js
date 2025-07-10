@@ -261,11 +261,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Seamless video loop functionality
 function initSeamlessVideo() {
+    // Left video (main_video_01.mp4)
     const video1 = document.getElementById('video1');
     const video2 = document.getElementById('video2');
     
-    if (!video1 || !video2) return;
+    // Right video (main_video_02.mp4)
+    const video3 = document.getElementById('video3');
+    const video4 = document.getElementById('video4');
     
+    // Initialize left video if elements exist
+    if (video1 && video2) {
+        initVideoGroup(video1, video2, 'Left');
+    }
+    
+    // Initialize right video if elements exist
+    if (video3 && video4) {
+        initVideoGroup(video3, video4, 'Right');
+    }
+}
+
+function initVideoGroup(video1, video2, side) {
     let currentVideo = video1;
     let nextVideo = video2;
     
@@ -308,12 +323,12 @@ function initSeamlessVideo() {
     
     // Handle video loading errors
     video1.addEventListener('error', function() {
-        console.log('Video 1 loading error, falling back to loop attribute');
+        console.log(`Video ${side} 1 loading error, falling back to loop attribute`);
         video1.loop = true;
     });
     
     video2.addEventListener('error', function() {
-        console.log('Video 2 loading error, falling back to loop attribute');
+        console.log(`Video ${side} 2 loading error, falling back to loop attribute`);
         video2.loop = true;
     });
 }
