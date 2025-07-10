@@ -1,3 +1,47 @@
+// iOS 및 모바일 터치 방지 설정
+document.addEventListener('DOMContentLoaded', function() {
+    // 컨텍스트 메뉴(우클릭, 롱프레스) 방지
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // 드래그 방지
+    document.addEventListener('dragstart', function(e) {
+        e.preventDefault();
+        return false;
+    });
+    
+    // 이미지와 비디오 선택 방지
+    document.addEventListener('selectstart', function(e) {
+        if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+            e.preventDefault();
+            return false;
+        }
+    });
+    
+    // iOS Safari 확대 방지 (두 번 탭)
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(e) {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+            e.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+    
+    // 이미지 저장 관련 키보드 단축키 방지
+    document.addEventListener('keydown', function(e) {
+        // Ctrl+S (저장), F12 (개발자도구), Ctrl+Shift+I (개발자도구) 등
+        if ((e.ctrlKey && e.key === 's') || 
+            e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+});
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
