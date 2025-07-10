@@ -444,13 +444,29 @@
         <div class="w-full overflow-hidden mb-12 md:mb-16">
             <div class="image-slider" style="overflow: hidden !important; height: 385px;">
                 <style>
+                    @keyframes slideRTL {
+                        0% {
+                            transform: translateX(0);
+                        }
+                        100% {
+                            transform: translateX(-50%);
+                        }
+                    }
+                    
+                    .slider-track {
+                        animation: slideRTL 30s linear infinite !important;
+                    }
+                    
                     @media (max-width: 768px) {
                         .image-slider {
                             height: 315px !important;
                         }
+                        .slider-track {
+                            width: calc((300px + 15px) * 20) !important;
+                        }
                     }
                 </style>
-                <div class="slider-track" style="display: flex !important; flex-direction: row !important; align-items: center;">
+                <div class="slider-track" style="display: flex !important; flex-direction: row !important; align-items: center; width: calc((365px + 20px) * 20) !important; animation: slideRTL 30s linear infinite !important;">
                     <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=365&h=365&fit=crop" alt="항공기 내부" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
                     <img src="https://images.unsplash.com/photo-1594736797933-d0d6e4b94ad2?w=365&h=365&fit=crop" alt="승무원 교육" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
                     <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=365&h=365&fit=crop" alt="면접 준비" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
