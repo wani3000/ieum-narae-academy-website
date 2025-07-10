@@ -2,12 +2,23 @@
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+        const target = this.getAttribute('href');
+        
+        // Handle logo click (href="#") - scroll to top
+        if (target === '#') {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
+        } else {
+            // Handle other anchor links
+            const targetElement = document.querySelector(target);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     });
 });
@@ -134,6 +145,14 @@ const teacherData = {
             mobile: '"자신감은 준비에서<br/>나옵니다. 완벽한 준비가<br/>완벽한 결과를 만들어요."',
             desktop: '"자신감은 준비에서 나옵니다.<br/>완벽한 준비가 완벽한 결과를 만들어요."'
         }
+    },
+    teacher3: {
+        name: "필립 강사님",
+        description: "해외 기업 면접 전문<br/>現 싱가포르 소재 기업 근무 • 아시아 기업 면접 지도",
+        quote: {
+            mobile: '"좋은 답보다 더 중요한 건,<br/>그 답이 \'진짜 나\'에게서<br/>나왔다는 거예요."',
+            desktop: '"좋은 답보다 더 중요한 건,<br/>그 답이 \'진짜 나\'에게서 나왔다는 거예요."'
+        }
     }
 };
 
@@ -141,9 +160,12 @@ const teacherData = {
 document.addEventListener('DOMContentLoaded', function() {
     const teacherImg1 = document.getElementById('teacher-img-1');
     const teacherImg2 = document.getElementById('teacher-img-2');
+    const teacherImg3 = document.getElementById('teacher-img-3');
     const teacherName = document.getElementById('teacher-name');
     const teacherDescription = document.getElementById('teacher-description');
     const teacherQuote = document.getElementById('teacher-quote');
+    
+    const allTeacherImages = [teacherImg1, teacherImg2, teacherImg3];
     
     // Set initial active state for teacher2 (Serena)
     if (teacherImg2) {
@@ -161,25 +183,39 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    function setActiveImage(activeImg, inactiveImg) {
+    function setActiveImage(activeImg) {
+        // Remove active state from all images
+        allTeacherImages.forEach(img => {
+            if (img) {
+                img.classList.remove('border-black');
+                img.classList.add('border-transparent');
+            }
+        });
+        
+        // Set active state for clicked image
         activeImg.classList.add('border-black');
         activeImg.classList.remove('border-transparent');
-        inactiveImg.classList.remove('border-black');
-        inactiveImg.classList.add('border-transparent');
     }
     
     // Add click events
     if (teacherImg1) {
         teacherImg1.addEventListener('click', function() {
             updateTeacherInfo(teacherData.teacher1);
-            setActiveImage(teacherImg1, teacherImg2);
+            setActiveImage(teacherImg1);
         });
     }
     
     if (teacherImg2) {
         teacherImg2.addEventListener('click', function() {
             updateTeacherInfo(teacherData.teacher2);
-            setActiveImage(teacherImg2, teacherImg1);
+            setActiveImage(teacherImg2);
+        });
+    }
+    
+    if (teacherImg3) {
+        teacherImg3.addEventListener('click', function() {
+            updateTeacherInfo(teacherData.teacher3);
+            setActiveImage(teacherImg3);
         });
     }
 });

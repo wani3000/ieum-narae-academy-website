@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>이음나래아카데미 - 당신의 이야기에 날개를 달아주는 곳</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="styles.css">
@@ -25,12 +25,10 @@
         <!-- Desktop Header -->
         <div class="hidden md:flex w-full max-w-[1280px] mx-auto px-4 py-2.5 justify-between items-center">
             <!-- Logo - Desktop only -->
-            <div class="flex flex-col justify-start items-start">
-                <div class="self-stretch flex flex-col justify-start items-start">
-                    <div class="py-[0.50px] flex justify-start items-start">
-                        <div class="text-gray-800 text-lg font-normal font-mono uppercase leading-[20px]">이음나래아카데미</div>
-                    </div>
-                </div>
+            <div class="flex items-center">
+                <a href="#" class="flex items-center">
+                    <img src="resource/logo.svg" alt="이음나래아카데미" class="max-h-8 w-auto">
+                </a>
             </div>
             
             <!-- Desktop Navigation -->
@@ -38,14 +36,14 @@
                 <div class="flex flex-col justify-start items-start">
                     <div class="self-stretch pb-[0.80px] flex flex-col justify-start items-start">
                         <div class="flex justify-start items-start">
-                            <a href="#courses" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">클래스 안내</a>
+                            <a href="#courses" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">이음나래 클래스 안내</a>
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-col justify-start items-start">
                     <div class="self-stretch pb-[0.80px] flex flex-col justify-start items-start">
                         <div class="flex justify-start items-start">
-                            <a href="#how-it-works" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">수업 방식</a>
+                            <a href="#how-it-works" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">이음나래 수업 방식</a>
                         </div>
                     </div>
                 </div>
@@ -81,34 +79,33 @@
         
         <!-- Mobile Header -->
         <div class="md:hidden w-full max-w-[1280px] mx-auto px-4 py-2.5 flex justify-between items-center">
-            <!-- Mobile Menu Button - Left side -->
+            <!-- Mobile Logo - Left side -->
             <div class="flex items-center">
+                <a href="#" class="flex items-center">
+                    <img src="resource/logo.svg" alt="이음나래아카데미" class="max-h-[24px] w-auto">
+                </a>
+            </div>
+            
+            <!-- Mobile CTA Button and Menu Button - Right side -->
+            <div class="flex items-center gap-2">
+                <div class="h-[46px] px-4 pt-1.5 pb-2 flex justify-center items-center gap-1 overflow-hidden hover:bg-opacity-90 transition-colors" style="background-color: #051766; border-radius: 30px;">
+                    <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="text-white text-sm font-medium leading-7">온라인 상담하기</a>
+                </div>
                 <button id="mobile-menu-btn" class="text-gray-700 p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
-            
-            <!-- Empty space or logo placeholder -->
-            <div class="flex-1"></div>
-            
-            <!-- Mobile CTA Button - Right side -->
-            <div class="flex justify-center items-center">
-                <div class="h-[46px] px-4 pt-1.5 pb-2 flex justify-center items-center gap-1 overflow-hidden hover:bg-opacity-90 transition-colors" style="background-color: #051766; border-radius: 30px;">
-                    <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="text-white text-sm font-medium leading-7">온라인 상담하기</a>
-                </div>
-            </div>
         </div>
         
         <!-- Mobile Navigation -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
             <div class="py-4 px-4 space-y-4">
-                <a href="#courses" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">클래스 안내</a>
-                <a href="#how-it-works" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">수업 방식</a>
+                <a href="#courses" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">이음나래 클래스 안내</a>
+                <a href="#how-it-works" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">이음나래 수업 방식</a>
                 <a href="#testimonials" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">강사진</a>
                 <a href="#faq" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">자주 묻는 질문</a>
-                                    <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="block text-white px-6 py-2 text-center mt-4 font-medium" style="background-color: #051766; border-radius: 30px;">온라인 상담하기</a>
             </div>
         </div>
     </header>
@@ -171,7 +168,7 @@
                 <div class="w-full max-w-2xl relative overflow-hidden">
                     <div class="w-full flex justify-center items-start">
                         <div class="text-center">
-                                                         <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">클래스 안내</div>
+                                                         <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">이음나래 클래스 안내</div>
                         </div>
                     </div>
                 </div>
@@ -244,7 +241,7 @@
                  <div class="w-full max-w-2xl relative overflow-hidden">
                      <div class="w-full flex justify-center items-start">
                          <div class="text-center">
-                                                           <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">수업 방식</div>
+                                                           <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">이음나래 수업 방식</div>
                          </div>
                      </div>
                  </div>
@@ -328,8 +325,9 @@
                     </style>
                     <div class="self-stretch pt-0 lg:pt-10 border-t-0 md:border-t border-gray-200 flex flex-col md:flex-row justify-start items-start md:items-center gap-4 md:gap-10">
                         <div class="flex justify-start items-center gap-2">
-                            <img id="teacher-img-1" class="w-16 h-16 md:w-20 md:h-20 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-400 transition-all" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face" alt="나래 강사님" />
-                            <img id="teacher-img-2" class="w-16 h-16 md:w-20 md:h-20 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-400 transition-all" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="민지 강사님" />
+                            <img id="teacher-img-1" class="w-16 h-16 md:w-20 md:h-20 rounded-full cursor-pointer border-2 border-transparent hover:border-black transition-all" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face" alt="나래 강사님" />
+                            <img id="teacher-img-2" class="w-16 h-16 md:w-20 md:h-20 rounded-full cursor-pointer border-2 border-transparent hover:border-black transition-all" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="민지 강사님" />
+                            <img id="teacher-img-3" class="w-16 h-16 md:w-20 md:h-20 rounded-full cursor-pointer border-2 border-transparent hover:border-black transition-all" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face" alt="필립 강사님" />
                         </div>
                         <div class="flex-1 inline-flex flex-col justify-start items-start gap-2">
                             <div id="teacher-name" class="self-stretch justify-start text-black text-base md:text-lg font-bold font-sans leading-loose">Serena 강사님</div>
@@ -359,7 +357,7 @@
                  </div>
              </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="rounded-lg p-6 md:p-8 flex flex-col" style="background-color: #F1F3F5;">
+                <div class="rounded-lg p-6 md:p-8 flex flex-col border-2 border-transparent md:hover:border-[#051766] transition-all duration-300" style="background-color: #F1F3F5;">
                     <h3 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">1:1 개인 코칭</h3>
                     <p class="text-gray-600 mb-4 text-sm md:text-base">필요한 부분만 집중적으로</p>
                     <div class="mb-6">
@@ -377,7 +375,7 @@
                     </div>
                     <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="w-full bg-transparent border text-white px-6 py-4 hover:bg-opacity-90 transition-colors text-sm md:text-base font-medium font-sans block text-center" style="border-color: #051766; background-color: #051766; border-radius: 30px;">온라인 상담하기</a>
                 </div>
-                <div class="rounded-lg p-6 md:p-8 border-2 flex flex-col" style="background-color: #F1F3F5; border-color: #051766;">
+                <div class="rounded-lg p-6 md:p-8 flex flex-col border-2 border-transparent md:hover:border-[#051766] transition-all duration-300" style="background-color: #F1F3F5;">
                     <h3 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">정규 클래스</h3>
                     <p class="text-gray-600 mb-4 text-sm md:text-base">체계적인 8주 완성 코스</p>
                     <div class="mb-6">
@@ -456,7 +454,7 @@
         <div class="w-full max-w-[1280px] mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                 <div>
-                    <h3 class="text-lg md:text-xl font-bold mb-4">이음나래아카데미</h3>
+                    <img src="resource/logo_white.svg" alt="이음나래아카데미" class="max-h-[30px] w-auto mb-4">
                     <p class="text-gray-300 text-sm md:text-base mb-4">당신의 이야기에 날개를 달아주는 곳, 이음나래아카데미</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-gray-300 hover:text-white text-xs md:text-sm">개인정보처리방침</a>
@@ -464,14 +462,14 @@
                     </div>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4 text-sm md:text-base font-sans">연락처</h4>
+                    <h4 class="font-bold mb-4 text-sm md:text-base font-sans">이메일</h4>
                     <div class="space-y-2 text-gray-300 text-sm md:text-base">
-                        <p>📧 florencelab@naver.com</p>
+                        <p>florencelab@naver.com</p>
                     </div>
                 </div>
             </div>
             <div class="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-300 text-sm md:text-base">플로렌스랩(Florencelab)</p>
+                <p class="text-gray-300 text-sm md:text-base">플로렌스랩 Florencelab</p>
                 <p class="text-gray-400 text-xs md:text-sm">© 2025 Florencelab. All rights reserved.</p>
             </div>
         </div>
