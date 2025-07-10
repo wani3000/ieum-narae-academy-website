@@ -218,4 +218,40 @@ document.addEventListener('DOMContentLoaded', function() {
             setActiveImage(teacherImg3);
         });
     }
+    
+    // Force image slider animation
+    function initImageSlider() {
+        const sliderTrack = document.querySelector('.slider-track');
+        if (sliderTrack) {
+            // Force animation with JavaScript if CSS animation fails
+            let position = 0;
+            const speed = 1; // pixels per frame
+            const maxPosition = sliderTrack.scrollWidth / 2;
+            
+            function animate() {
+                position += speed;
+                if (position >= maxPosition) {
+                    position = 0;
+                }
+                sliderTrack.style.transform = `translateX(-${position}px)`;
+                requestAnimationFrame(animate);
+            }
+            
+            // Check if CSS animation is working after 1 second
+            setTimeout(() => {
+                const computedStyle = window.getComputedStyle(sliderTrack);
+                const animationName = computedStyle.animationName;
+                
+                if (animationName === 'none' || !animationName || animationName === '') {
+                    console.log('CSS animation not working, starting JavaScript animation');
+                    animate();
+                } else {
+                    console.log('CSS animation is working:', animationName);
+                }
+            }, 1000);
+        }
+    }
+    
+    // Initialize image slider
+    initImageSlider();
 });
