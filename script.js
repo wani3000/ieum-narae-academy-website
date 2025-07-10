@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (sliderTrack) {
             // Force animation with JavaScript if CSS animation fails
             let position = 0;
-            const speed = 1; // pixels per frame
+            const speed = 0.5; // pixels per frame (reduced from 1 to match 60s cycle)
             const maxPosition = sliderTrack.scrollWidth / 2;
             
             function animate() {
