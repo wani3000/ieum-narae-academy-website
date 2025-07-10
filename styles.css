@@ -902,8 +902,8 @@ body {
 .slider-track {
     display: flex !important;
     flex-direction: row !important;
-    width: calc((365px + 20px) * 20) !important; /* 20개 이미지 * (너비 + 마진) */
-    animation: slideRTL 30s linear infinite;
+    width: calc((365px + 20px) * 16) !important; /* 16개 이미지 * (너비 + 마진) */
+    animation: slideRTL 90s linear infinite;
     height: 365px;
     align-items: center;
 }
@@ -934,7 +934,7 @@ body {
     }
     
     .slider-track {
-        width: calc((300px + 15px) * 20) !important;
+        width: calc((300px + 15px) * 16) !important;
         height: 300px;
     }
     
