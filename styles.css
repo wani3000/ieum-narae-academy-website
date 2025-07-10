@@ -892,23 +892,28 @@ body {
 /* Image Slider */
 .image-slider {
     width: 100%;
-    overflow: hidden;
+    overflow: hidden !important;
     position: relative;
+    height: 385px; /* 365px + 20px margin */
 }
 
 .slider-track {
-    display: flex;
-    width: calc(365px * 20);
+    display: flex !important;
+    flex-direction: row !important;
+    width: calc((365px + 20px) * 20) !important; /* 20개 이미지 * (너비 + 마진) */
     animation: slideRTL 30s linear infinite;
+    height: 365px;
+    align-items: center;
 }
 
 .slider-image {
-    width: 365px;
-    height: 365px;
-    flex-shrink: 0;
+    width: 365px !important;
+    height: 365px !important;
+    flex-shrink: 0 !important;
     border-radius: 8px;
     margin-right: 20px;
     object-fit: cover;
+    display: block !important;
 }
 
 @keyframes slideRTL {
@@ -922,13 +927,18 @@ body {
 
 /* Mobile 크기 조정 */
 @media (max-width: 768px) {
+    .image-slider {
+        height: 315px; /* 300px + 15px margin */
+    }
+    
     .slider-track {
-        width: calc(300px * 20);
+        width: calc((300px + 15px) * 20) !important;
+        height: 300px;
     }
     
     .slider-image {
-        width: 300px;
-        height: 300px;
+        width: 300px !important;
+        height: 300px !important;
         margin-right: 15px;
     }
 }

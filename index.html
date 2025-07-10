@@ -442,29 +442,36 @@
     <section class="w-full bg-white pt-16 pb-20 md:pt-28 md:pb-32">
         <!-- Image Slider -->
         <div class="w-full overflow-hidden mb-12 md:mb-16">
-            <div class="image-slider">
-                <div class="slider-track">
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=365&h=365&fit=crop" alt="항공기 내부" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1594736797933-d0d6e4b94ad2?w=365&h=365&fit=crop" alt="승무원 교육" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=365&h=365&fit=crop" alt="면접 준비" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=365&h=365&fit=crop" alt="이미지 컨설팅" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=365&h=365&fit=crop" alt="면접 연습" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=365&h=365&fit=crop" alt="항공업계" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=365&h=365&fit=crop" alt="교육 현장" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=365&h=365&fit=crop" alt="학습 환경" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=365&h=365&fit=crop" alt="팀워크" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=365&h=365&fit=crop" alt="성공" class="slider-image">
+            <div class="image-slider" style="overflow: hidden !important; height: 385px;">
+                <style>
+                    @media (max-width: 768px) {
+                        .image-slider {
+                            height: 315px !important;
+                        }
+                    }
+                </style>
+                <div class="slider-track" style="display: flex !important; flex-direction: row !important; align-items: center;">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=365&h=365&fit=crop" alt="항공기 내부" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0d6e4b94ad2?w=365&h=365&fit=crop" alt="승무원 교육" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=365&h=365&fit=crop" alt="면접 준비" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=365&h=365&fit=crop" alt="이미지 컨설팅" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=365&h=365&fit=crop" alt="면접 연습" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=365&h=365&fit=crop" alt="항공업계" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=365&h=365&fit=crop" alt="교육 현장" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=365&h=365&fit=crop" alt="학습 환경" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=365&h=365&fit=crop" alt="팀워크" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=365&h=365&fit=crop" alt="성공" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
                     <!-- 반복 이미지들 (무한 애니메이션을 위해) -->
-                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=365&h=365&fit=crop" alt="항공기 내부" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1594736797933-d0d6e4b94ad2?w=365&h=365&fit=crop" alt="승무원 교육" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=365&h=365&fit=crop" alt="면접 준비" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=365&h=365&fit=crop" alt="이미지 컨설팅" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=365&h=365&fit=crop" alt="면접 연습" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=365&h=365&fit=crop" alt="항공업계" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=365&h=365&fit=crop" alt="교육 현장" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=365&h=365&fit=crop" alt="학습 환경" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=365&h=365&fit=crop" alt="팀워크" class="slider-image">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=365&h=365&fit=crop" alt="성공" class="slider-image">
+                    <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=365&h=365&fit=crop" alt="항공기 내부" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1594736797933-d0d6e4b94ad2?w=365&h=365&fit=crop" alt="승무원 교육" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=365&h=365&fit=crop" alt="면접 준비" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=365&h=365&fit=crop" alt="이미지 컨설팅" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=365&h=365&fit=crop" alt="면접 연습" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=365&h=365&fit=crop" alt="항공업계" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=365&h=365&fit=crop" alt="교육 현장" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=365&h=365&fit=crop" alt="학습 환경" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=365&h=365&fit=crop" alt="팀워크" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=365&h=365&fit=crop" alt="성공" class="slider-image" style="width: 365px !important; height: 365px !important; flex-shrink: 0 !important; display: block !important; margin-right: 20px; border-radius: 8px; object-fit: cover;">
                 </div>
             </div>
         </div>
