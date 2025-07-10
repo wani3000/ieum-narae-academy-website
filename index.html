@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이음나래아카데미 - 당신의 이야기에 날개를 달아주는 곳</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ["Pretendard Variable", "Pretendard", '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="w-full fixed top-0 z-50 backdrop-blur-md bg-white bg-opacity-90 border-b border-gray-200">
+        <!-- Desktop Header -->
+        <div class="hidden md:flex w-full max-w-[1280px] mx-auto px-4 py-2.5 justify-between items-center">
+            <!-- Logo - Desktop only -->
+            <div class="flex flex-col justify-start items-start">
+                <div class="self-stretch flex flex-col justify-start items-start">
+                    <div class="py-[0.50px] flex justify-start items-start">
+                        <div class="text-gray-800 text-lg font-normal font-mono uppercase leading-[20px]">이음나래아카데미</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <div class="flex justify-center items-center gap-10">
+                <div class="flex flex-col justify-start items-start">
+                    <div class="self-stretch pb-[0.80px] flex flex-col justify-start items-start">
+                        <div class="flex justify-start items-start">
+                            <a href="#courses" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">클래스 안내</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-start items-start">
+                    <div class="self-stretch pb-[0.80px] flex flex-col justify-start items-start">
+                        <div class="flex justify-start items-start">
+                            <a href="#how-it-works" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">수업 방식</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-start items-start">
+                    <div class="self-stretch pb-[0.80px] flex flex-col justify-start items-start">
+                        <div class="flex justify-start items-start">
+                            <a href="#testimonials" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">강사진</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-start items-start">
+                    <div class="self-stretch pb-[0.80px] flex flex-col justify-start items-start">
+                        <div class="flex justify-start items-start">
+                            <a href="#faq" class="text-gray-700 text-base font-normal leading-7 hover:text-gray-500 transition-colors">자주 묻는 질문</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="flex justify-center items-center">
+                <div class="flex flex-col justify-start items-start">
+                    <div class="h-[46px] md:h-[48px] px-6 pt-1.5 pb-2 flex justify-center items-center overflow-hidden hover:bg-opacity-90 transition-colors" style="background-color: #051766; border-radius: 30px;">
+                        <div class="flex flex-col justify-start items-start">
+                            <div class="self-stretch pb-[0.80px] flex flex-col justify-start items-start">
+                                <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="text-white text-base font-medium leading-7">온라인 상담하기</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Header -->
+        <div class="md:hidden w-full max-w-[1280px] mx-auto px-4 py-2.5 flex justify-between items-center">
+            <!-- Mobile Menu Button - Left side -->
+            <div class="flex items-center">
+                <button id="mobile-menu-btn" class="text-gray-700 p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Empty space or logo placeholder -->
+            <div class="flex-1"></div>
+            
+            <!-- Mobile CTA Button - Right side -->
+            <div class="flex justify-center items-center">
+                <div class="h-[46px] px-4 pt-1.5 pb-2 flex justify-center items-center gap-1 overflow-hidden hover:bg-opacity-90 transition-colors" style="background-color: #051766; border-radius: 30px;">
+                    <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="text-white text-sm font-medium leading-7">온라인 상담하기</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="py-4 px-4 space-y-4">
+                <a href="#courses" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">클래스 안내</a>
+                <a href="#how-it-works" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">수업 방식</a>
+                <a href="#testimonials" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">강사진</a>
+                <a href="#faq" class="block text-black text-base font-normal leading-7 hover:text-gray-600 transition-colors">자주 묻는 질문</a>
+                                    <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="block text-white px-6 py-2 text-center mt-4 font-medium" style="background-color: #051766; border-radius: 30px;">온라인 상담하기</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="w-full pt-[90px] pb-5 md:pt-[130px] md:pb-20 relative bg-white scroll-mt-20">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+        
+        <!-- Mobile: Text only -->
+        <div class="block lg:hidden">
+            <!-- Mobile Text Section -->
+            <div class="px-4 py-5 text-center mb-5">
+                <h2 class="text-gray-800 text-[32px] font-bold font-sans uppercase leading-snug mb-4">나답게 말하고,<br> 나답게 빛나는 순간</h2>
+                <p class="text-gray-600 text-[18px] font-normal leading-[30px]">
+                    진짜 나를 보여주는 면접, 그 시작은 제대로 준비하는 거예요.<br/>
+                    1:1 코칭부터 정규 클래스까지, 당신만의 이야기를 스스로 말할 수 있도록 함께 도와드릴게요.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Desktop: Text only -->
+        <div class="hidden lg:block">
+            <div class="w-full mx-auto flex flex-row justify-between items-start overflow-hidden gap-8">
+                <div class="w-full lg:w-[600px] relative overflow-hidden">
+                    <div class="flex flex-col justify-start items-start">
+                        <h2 class="text-gray-800 text-[40px] font-bold font-sans uppercase leading-snug text-left">나답게 말하고, 나답게 빛나는 순간</h2>
+                    </div>
+                </div>
+                <div class="w-full lg:w-[500px] max-w-[500px] relative overflow-hidden">
+                    <div class="flex flex-col justify-start items-start">
+                        <p class="text-gray-600 text-xl font-normal leading-[30px] mb-8 text-left">
+                            진짜 나를 보여주는 면접, 그 시작은 제대로 준비하는 거예요.<br/>
+                            1:1 코칭부터 정규 클래스까지, 당신만의 이야기를 스스로 말할 수 있도록 함께 도와드릴게요.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero w-full bg-white mt-5 md:mt-0">
+        <div class="hero-images">
+            <div class="hero-image-left">
+                <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=800&h=600&fit=crop" alt="항공기 내부">
+            </div>
+            <div class="hero-image-right">
+                <img src="https://images.unsplash.com/photo-1594736797933-d0d6e4b94ad2?w=800&h=600&fit=crop&crop=face" alt="전문 승무원">
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="w-full bg-white py-12 md:py-24">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+            <!-- Section Header -->
+            <div class="w-full pb-16 flex flex-col justify-center items-center gap-5">
+                <div class="w-full max-w-2xl relative overflow-hidden">
+                    <div class="w-full flex justify-center items-start">
+                        <div class="text-center">
+                                                         <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">클래스 안내</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col justify-center items-center overflow-hidden">
+                    <div class="max-w-4xl text-center">
+                        <div class="space-y-4">
+                            <div class="text-center text-gray-700 text-[18px] md:text-xl font-normal leading-[30px]">단 1회로도 가능한 1:1 맞춤 코칭부터, 정규 커리큘럼을 따라 차근차근 준비하는 수업까지 준비돼 있어요.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- New Class Guide Layout -->
+            <div class="w-full max-w-[1280px] mx-auto flex flex-col gap-5">
+                <!-- 1:1 클래스 -->
+                <div class="flex flex-col lg:flex-row justify-center items-center gap-5">
+                    <div class="w-full lg:w-[630px] lg:flex-shrink-0 h-auto lg:h-[460px] p-6 md:p-8 lg:p-10 rounded-lg flex flex-col justify-between items-start" style="background-color: #F1F3F5;">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans mb-4 lg:mb-0">1:1 클래스</div>
+                        <div class="flex flex-col justify-start items-start gap-3 md:gap-4">
+                            <div class="text-gray-800 text-base md:text-lg font-bold font-sans leading-loose">단 한 번으로도 달라지는 피드백</div>
+                            <div class="text-gray-700 text-base md:text-lg font-normal font-sans leading-7">지금 가장 필요한 부분만 집중해서 코칭해드리는 수업이에요. <br/>자기소개, 발성, 이미지 점검 등 단 한 번만 들어도 괜찮아요.</div>
+                        </div>
+                    </div>
+                    <img class="w-full lg:w-[630px] lg:flex-shrink-0 h-[250px] md:h-[350px] lg:h-[460px] rounded-lg object-cover" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=630&h=460&fit=crop" alt="1:1 클래스" />
+                </div>
+
+                <!-- 정규 클래스 -->
+                <div class="flex flex-col lg:flex-row justify-center items-center gap-5">
+                    <img class="w-full lg:w-[630px] lg:flex-shrink-0 h-[250px] md:h-[350px] lg:h-[460px] rounded-lg object-cover order-2 lg:order-1" src="https://images.unsplash.com/photo-1594736797933-d0d6e4b94ad2?w=630&h=460&fit=crop" alt="정규 클래스" />
+                    <div class="w-full lg:w-[630px] lg:flex-shrink-0 h-auto lg:h-[460px] p-6 md:p-8 lg:p-10 rounded-lg flex flex-col justify-between items-start order-1 lg:order-2" style="background-color: #F1F3F5;">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans mb-4 lg:mb-0">정규 클래스</div>
+                        <div class="flex flex-col justify-start items-start gap-3 md:gap-4">
+                            <div class="text-gray-800 text-base md:text-lg font-bold font-sans leading-loose">기초부터 실전까지 단계별 완성</div>
+                            <div class="text-gray-700 text-base md:text-lg font-normal font-sans leading-7">기초부터 실전까지 체계적으로 준비할 수 있는 커리큘럼이에요.<br/>주차별로 단계별 수업이 진행되고, 소수 정예로 운영돼요.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 면접 준비 -->
+                <div class="flex flex-col lg:flex-row justify-center items-center gap-5">
+                    <div class="w-full lg:w-[630px] lg:flex-shrink-0 h-auto lg:h-[460px] p-6 md:p-8 lg:p-10 rounded-lg flex flex-col justify-between items-start" style="background-color: #F1F3F5;">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans mb-4 lg:mb-0">면접 준비</div>
+                        <div class="flex flex-col justify-start items-start gap-3 md:gap-4">
+                            <div class="text-gray-800 text-base md:text-lg font-bold font-sans leading-loose">실전 감각을 키우는 모의면접 중심 수업</div>
+                            <div class="text-gray-700 text-base md:text-lg font-normal font-sans leading-7">실제 면접처럼 연습해보는 모의면접 중심 수업이에요.<br/>압박 질문이나 돌발 상황에도 당황하지 않도록 도와드려요.</div>
+                        </div>
+                    </div>
+                    <img class="w-full lg:w-[630px] lg:flex-shrink-0 h-[250px] md:h-[350px] lg:h-[460px] rounded-lg object-cover" src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=630&h=460&fit=crop" alt="면접 준비" />
+                </div>
+
+                <!-- 이미지 컨설팅 -->
+                <div class="flex flex-col lg:flex-row justify-center items-center gap-5">
+                    <img class="w-full lg:w-[630px] lg:flex-shrink-0 h-[250px] md:h-[350px] lg:h-[460px] rounded-lg object-cover order-2 lg:order-1" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=630&h=460&fit=crop" alt="이미지 컨설팅" />
+                    <div class="w-full lg:w-[630px] lg:flex-shrink-0 h-auto lg:h-[460px] p-6 md:p-8 lg:p-10 rounded-lg flex flex-col justify-between items-start order-1 lg:order-2" style="background-color: #F1F3F5;">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans mb-4 lg:mb-0">이미지 컨설팅</div>
+                        <div class="flex flex-col justify-start items-start gap-3 md:gap-4">
+                            <div class="text-gray-800 text-base md:text-lg font-bold font-sans leading-loose">첫인상을 바꾸는 스타일 트레이닝</div>
+                            <div class="text-gray-700 text-base md:text-lg font-normal font-sans leading-7">처음 인상을 좋게 만드는 스타일링과 자세, 발성을 점검해드려요.<br/>헤어부터 복장까지 면접에 어울리는 이미지로 만들어드려요.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- How It Works Section -->
+    <section id="how-it-works" class="w-full bg-white py-12 md:py-24">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+                         <div class="w-full pb-10 flex flex-col justify-center items-center gap-5 overflow-hidden">
+                 <div class="w-full max-w-2xl relative overflow-hidden">
+                     <div class="w-full flex justify-center items-start">
+                         <div class="text-center">
+                                                           <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">수업 방식</div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="w-full flex flex-col justify-center items-center overflow-hidden">
+                     <div class="max-w-4xl text-center">
+                         <div class="text-center text-gray-700 text-[18px] md:text-xl font-normal leading-[30px]">체계적인 단계별 학습으로 승무원 합격을 위한 완벽한 준비를 시작하세요.</div>
+                     </div>
+                 </div>
+             </div>
+            <div class="w-full max-w-[1260px] mx-auto inline-flex flex-col justify-start items-start">
+                <div class="self-stretch py-8 md:py-10 border-b border-gray-200 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 md:gap-0">
+                    <div class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2 md:gap-6 md:gap-20">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans">01</div>
+                        <div class="text-gray-800 text-xl md:text-3xl font-bold font-sans">상담 및 진단</div>
+                    </div>
+                    <div class="text-center md:text-left text-gray-800 text-base md:text-xl font-normal font-sans leading-loose">현재 상태를 정확히 파악하고 개인별 맞춤 학습 계획을 세웁니다.</div>
+                </div>
+                <div class="self-stretch py-8 md:py-10 border-b border-gray-200 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 md:gap-0">
+                    <div class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2 md:gap-6 md:gap-20">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans">02</div>
+                        <div class="text-gray-800 text-xl md:text-3xl font-bold font-sans">클래스 선택</div>
+                    </div>
+                    <div class="text-center md:text-left text-gray-800 text-base md:text-xl font-normal font-sans leading-loose">목표와 일정에 맞는 1:1 클래스 또는 정규 클래스를 선택합니다.</div>
+                </div>
+                <div class="self-stretch py-8 md:py-10 border-b border-gray-200 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 md:gap-0">
+                    <div class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2 md:gap-6 md:gap-20">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans">03</div>
+                        <div class="text-gray-800 text-xl md:text-3xl font-bold font-sans">집중 학습</div>
+                    </div>
+                    <div class="text-center md:text-left text-gray-800 text-base md:text-xl font-normal font-sans leading-loose">발성, 이미지, 자소서, 면접 등 필요한 모든 영역을 체계적으로 학습합니다.</div>
+                </div>
+                <div class="self-stretch py-8 md:py-10 border-b border-gray-200 flex flex-col md:flex-row justify-center md:justify-between items-center gap-4 md:gap-0">
+                    <div class="flex flex-col md:flex-row justify-center md:justify-start items-center gap-2 md:gap-6 md:gap-20">
+                        <div class="text-gray-800 text-2xl md:text-3xl font-bold font-sans">04</div>
+                        <div class="text-gray-800 text-xl md:text-3xl font-bold font-sans">실전 연습</div>
+                    </div>
+                    <div class="text-center md:text-left text-gray-800 text-base md:text-xl font-normal font-sans leading-loose">실제 면접과 동일한 환경에서 모의면접을 통해 완벽하게 준비합니다.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="w-full bg-white py-12 md:py-24">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+            <div class="w-full pb-10 flex flex-col justify-center items-center gap-5 overflow-hidden">
+                <div class="w-full max-w-2xl relative overflow-hidden">
+                    <div class="w-full flex justify-center items-start">
+                        <div class="text-center">
+                                                         <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">강사진</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col justify-center items-center overflow-hidden">
+                    <div class="max-w-4xl text-center">
+                        <div class="text-center text-gray-700 text-[18px] md:text-xl font-normal leading-[30px]">경험과 실력으로 검증된 강사진이에요.<br/>수강생분들의 합격을 누구보다 진심으로 응원하고, 바로 옆에서 함께 준비해드려요.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- New Teacher Section -->
+            <div class="w-full max-w-[1280px] mx-auto flex justify-center">
+                <div class="teacher-box w-full max-w-[1280px] h-auto lg:h-[460px] p-6 md:p-8 lg:p-10 rounded-lg flex flex-col justify-start lg:justify-between items-start gap-28 lg:gap-0" style="background-color: #F1F3F5;">
+                    <style>
+                        @media (max-width: 1023px) {
+                            .teacher-box {
+                                min-height: 460px !important;
+                            }
+                        }
+                    </style>
+                    <div id="teacher-quote" class="self-stretch justify-start text-black font-bold font-sans leading-8 md:leading-10" style="font-size: 26px;">
+                        <span class="block md:hidden">"면접에서 중요한 건<br/>'정답'이 아니라 그 사람만의<br/>'결'이 드러나는 답이에요."</span>
+                        <span class="hidden md:block">"면접에서 중요한 건 '정답'이 아니라<br/>그 사람만의 '결'이 드러나는 답이에요."</span>
+                    </div>
+                    <style>
+                        @media (min-width: 768px) {
+                            #teacher-quote {
+                                font-size: 32px !important;
+                            }
+                        }
+                    </style>
+                    <div class="self-stretch pt-0 lg:pt-10 border-t-0 md:border-t border-gray-200 flex flex-col md:flex-row justify-start items-start md:items-center gap-4 md:gap-10">
+                        <div class="flex justify-start items-center gap-2">
+                            <img id="teacher-img-1" class="w-16 h-16 md:w-20 md:h-20 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-400 transition-all" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face" alt="나래 강사님" />
+                            <img id="teacher-img-2" class="w-16 h-16 md:w-20 md:h-20 rounded-full cursor-pointer border-2 border-transparent hover:border-gray-400 transition-all" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face" alt="민지 강사님" />
+                        </div>
+                        <div class="flex-1 inline-flex flex-col justify-start items-start gap-2">
+                            <div id="teacher-name" class="self-stretch justify-start text-black text-base md:text-lg font-bold font-sans leading-loose">Serena 강사님</div>
+                            <div id="teacher-description" class="self-stretch justify-start text-gray-600 text-sm md:text-base font-normal font-sans leading-normal">해외 항공사 채용 전문<br/>現 Flydubai 근무 • 前 Emirates Airlines • 아시아 및 중동, 유럽 외항사 합격 지도</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="w-full bg-white py-12 md:py-24">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+                         <div class="w-full pb-10 flex flex-col justify-center items-center gap-5 overflow-hidden">
+                 <div class="w-full max-w-2xl relative overflow-hidden">
+                     <div class="w-full flex justify-center items-start">
+                         <div class="text-center">
+                                                           <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">부담 없이,<br/>합리적인 비용으로 시작해보세요.</div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="w-full flex flex-col justify-center items-center overflow-hidden">
+                     <div class="max-w-4xl text-center">
+                         <div class="text-center text-gray-700 text-[18px] md:text-xl font-normal leading-[30px]">원하시는 방향과 예산에 맞춰 가장 잘 맞는 클래스를 안내해드릴게요.</div>
+                     </div>
+                 </div>
+             </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="rounded-lg p-6 md:p-8 flex flex-col" style="background-color: #F1F3F5;">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">1:1 개인 코칭</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">필요한 부분만 집중적으로</p>
+                    <div class="mb-6">
+                        <span class="text-3xl md:text-4xl font-bold text-gray-800">상담문의</span>
+                    </div>
+                    <div class="mb-8 flex-grow">
+                        <p class="text-gray-800 font-medium mb-4 text-sm md:text-base">포함 내용:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm md:text-base">
+                            <li>• 개인 맞춤 진단 및 상담</li>
+                            <li>• 발성, 이미지, 자소서 중 선택</li>
+                            <li>• 1회 2시간 집중 코칭</li>
+                            <li>• 수업 후 피드백 제공</li>
+                            <li>• 온라인 상담 가능</li>
+                        </ul>
+                    </div>
+                    <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="w-full bg-transparent border text-white px-6 py-4 hover:bg-opacity-90 transition-colors text-sm md:text-base font-medium font-sans block text-center" style="border-color: #051766; background-color: #051766; border-radius: 30px;">온라인 상담하기</a>
+                </div>
+                <div class="rounded-lg p-6 md:p-8 border-2 flex flex-col" style="background-color: #F1F3F5; border-color: #051766;">
+                    <h3 class="text-xl md:text-2xl font-bold mb-2 text-gray-800">정규 클래스</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">체계적인 8주 완성 코스</p>
+                    <div class="mb-6">
+                        <span class="text-3xl md:text-4xl font-bold text-gray-800">상담문의</span>
+                    </div>
+                    <div class="mb-8 flex-grow">
+                        <p class="text-gray-800 font-medium mb-4 text-sm md:text-base">포함 내용:</p>
+                        <ul class="space-y-2 text-gray-600 text-sm md:text-base">
+                            <li>• 8주 커리큘럼 (주 1회 3시간)</li>
+                            <li>• 소수 정예 (1~6명)</li>
+                            <li>• 실전 모의면접 3회</li>
+                            <li>• 개인별 맞춤 피드백</li>
+                            <li>• 수강 완료 후 6개월 사후관리</li>
+                        </ul>
+                    </div>
+                    <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="w-full text-white px-6 py-4 hover:bg-opacity-90 transition-colors text-sm md:text-base font-medium font-sans block text-center" style="background-color: #051766; border-radius: 30px;">온라인 상담하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="w-full bg-white py-12 md:py-24">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+                         <div class="w-full pb-10 flex flex-col justify-center items-center gap-5 overflow-hidden">
+                 <div class="w-full max-w-2xl relative overflow-hidden">
+                     <div class="w-full flex justify-center items-start">
+                         <div class="text-center">
+                                                           <div class="text-gray-800 text-[32px] md:text-[40px] font-bold font-sans uppercase leading-snug">자주 묻는 질문</div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="w-full flex flex-col justify-center items-center overflow-hidden">
+                     <div class="max-w-4xl text-center">
+                         <div class="text-center text-gray-700 text-[18px] md:text-xl font-normal leading-[30px]">궁금한 점이 있으신가요? 자주 묻는 질문들을 확인해보세요.</div>
+                     </div>
+                 </div>
+             </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+                <div class="rounded-lg p-4 md:p-6" style="background-color: #F1F3F5;">
+                    <h3 class="text-lg md:text-xl font-bold mb-4 text-gray-800">온라인 수업도 가능한가요?</h3>
+                    <p class="text-gray-600 text-sm md:text-base">네, 온라인과 오프라인 수업 모두 가능합니다. 거리나 시간 제약이 있으시면 화상 수업으로 진행하며, 오프라인과 동일한 퀄리티의 수업을 제공합니다.</p>
+                </div>
+                <div class="rounded-lg p-4 md:p-6" style="background-color: #F1F3F5;">
+                    <h3 class="text-lg md:text-xl font-bold mb-4 text-gray-800">상담 예약은 어떻게 하나요?</h3>
+                    <p class="text-gray-600 text-sm md:text-base">온라인 상담을 통해 현재 상태를 파악한 후 최적의 클래스를 추천해드립니다. 상담은 무료이며, 강제로 수강을 권유하지 않습니다.</p>
+                </div>
+
+
+                <div class="rounded-lg p-4 md:p-6" style="background-color: #F1F3F5;">
+                    <h3 class="text-lg md:text-xl font-bold mb-4 text-gray-800">수업을 놓치면 어떻게 되나요?</h3>
+                    <p class="text-gray-600 text-sm md:text-base">개인 사정으로 수업을 참석하기 어려우신 경우, 미리 말씀해주시면 가능한 시간으로 조정해드려요. 정규 클래스의 경우에도 보강 수업은 사전 협의가 필요하며, 당일 취소나 무단 결석 시에는 보강이 어려운 점 양해 부탁드려요.</p>
+                </div>
+                <div class="rounded-lg p-4 md:p-6" style="background-color: #F1F3F5;">
+                    <h3 class="text-lg md:text-xl font-bold mb-4 text-gray-800">어떤 준비물을 챙겨가야 하나요?</h3>
+                    <p class="text-gray-600 text-sm md:text-base">별도의 준비물은 없어요. 필기 도구와 편한 복장 정도만 챙겨오시면 돼요. 면접복이나 특정 복장이 필요한 수업의 경우, 사전에 따로 안내해드려요.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="w-full bg-white pt-16 pb-20 md:pt-28 md:pb-32">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-[32px] md:text-[40px] font-bold mb-4 text-gray-800 font-sans uppercase leading-snug">당신이 빛나는 순간을 함께 준비할게요.</h2>
+            <p class="text-gray-600 text-[18px] md:text-xl mb-8 font-sans font-normal leading-[30px]">어떤 목표든, 함께 준비해드릴게요.</p>
+            <a href="https://open.kakao.com/o/sOQOF6Bh" target="_blank" class="w-full max-w-sm mx-auto text-white px-6 py-4 text-sm md:text-base font-medium hover:bg-opacity-90 transition-colors font-sans block text-center" style="background-color: #051766; border-radius: 30px;">온라인 상담하기</a>
+        </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-black text-white py-12 md:py-16">
+        <div class="w-full max-w-[1280px] mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-lg md:text-xl font-bold mb-4">이음나래아카데미</h3>
+                    <p class="text-gray-300 text-sm md:text-base mb-4">당신의 이야기에 날개를 달아주는 곳, 이음나래아카데미</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white text-xs md:text-sm">개인정보처리방침</a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xs md:text-sm">이용약관</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 text-sm md:text-base font-sans">연락처</h4>
+                    <div class="space-y-2 text-gray-300 text-sm md:text-base">
+                        <p>📧 florencelab@naver.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-300 text-sm md:text-base">플로렌스랩(Florencelab)</p>
+                <p class="text-gray-400 text-xs md:text-sm">© 2025 Florencelab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
