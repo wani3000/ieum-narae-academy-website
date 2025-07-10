@@ -889,6 +889,50 @@ body {
     }
 }
 
+/* Image Slider */
+.image-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    width: calc(365px * 20);
+    animation: slideRTL 30s linear infinite;
+}
+
+.slider-image {
+    width: 365px;
+    height: 365px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+@keyframes slideRTL {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobile 크기 조정 */
+@media (max-width: 768px) {
+    .slider-track {
+        width: calc(300px * 20);
+    }
+    
+    .slider-image {
+        width: 300px;
+        height: 300px;
+        margin-right: 15px;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .hero {
