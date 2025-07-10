@@ -1046,26 +1046,33 @@ body {
     }
     
     .hero {
-        height: 0;
+        height: auto;
         width: 100%;
-        aspect-ratio: 9/16;
-        min-height: 450px;
-        max-height: 75vh;
         margin-top: 70px;
     }
     
     .hero-images {
-        height: 100%;
+        height: auto;
         width: 100%;
+        flex-direction: column;
     }
     
     .hero-image-left {
-        height: 100%;
-        flex: 1;
+        height: 0;
+        width: 100%;
+        aspect-ratio: 9/16;
+        min-height: 350px;
+        max-height: 50vh;
+        flex: none;
     }
     
     .hero-image-right {
-        display: none;
+        height: 0;
+        width: 100%;
+        aspect-ratio: 9/16;
+        min-height: 350px;
+        max-height: 50vh;
+        flex: none;
     }
     
     /* About Us styles removed - now using Tailwind */
