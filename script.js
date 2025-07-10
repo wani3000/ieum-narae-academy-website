@@ -147,7 +147,7 @@ const teacherData = {
         }
     },
     teacher3: {
-        name: "필립 강사님",
+        name: "Philip 강사님",
         description: "해외 기업 면접 전문<br/>現 싱가포르 소재 기업 근무 • 아시아 기업 면접 지도",
         quote: {
             mobile: '"좋은 답보다 더 중요한 건,<br/>그 답이 \'진짜 나\'에게서<br/>나왔다는 거예요."',
