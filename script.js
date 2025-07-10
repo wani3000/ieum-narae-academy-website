@@ -254,4 +254,66 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize image slider
     initImageSlider();
+    
+    // Initialize seamless video loop
+    initSeamlessVideo();
 });
+
+// Seamless video loop functionality
+function initSeamlessVideo() {
+    const video1 = document.getElementById('video1');
+    const video2 = document.getElementById('video2');
+    
+    if (!video1 || !video2) return;
+    
+    let currentVideo = video1;
+    let nextVideo = video2;
+    
+    // Preload the second video
+    video2.load();
+    
+    function switchVideos() {
+        // Start the next video
+        nextVideo.currentTime = 0;
+        nextVideo.play();
+        
+        // Fade out current video and fade in next video
+        currentVideo.classList.remove('active');
+        nextVideo.classList.add('active');
+        
+        // Swap the references
+        const temp = currentVideo;
+        currentVideo = nextVideo;
+        nextVideo = temp;
+        
+        // Reset the next video after fade transition
+        setTimeout(() => {
+            nextVideo.pause();
+            nextVideo.currentTime = 0;
+        }, 500); // 0.5s transition time
+    }
+    
+    // Set up event listeners for seamless looping
+    video1.addEventListener('timeupdate', function() {
+        if (video1.classList.contains('active') && video1.duration - video1.currentTime < 0.5) {
+            switchVideos();
+        }
+    });
+    
+    video2.addEventListener('timeupdate', function() {
+        if (video2.classList.contains('active') && video2.duration - video2.currentTime < 0.5) {
+            switchVideos();
+        }
+    });
+    
+    // Handle video loading errors
+    video1.addEventListener('error', function() {
+        console.log('Video 1 loading error, falling back to loop attribute');
+        video1.loop = true;
+    });
+    
+    video2.addEventListener('error', function() {
+        console.log('Video 2 loading error, falling back to loop attribute');
+        video2.loop = true;
+    });
+}

@@ -152,7 +152,11 @@
     <section class="hero w-full bg-white mt-5 md:mt-0">
         <div class="hero-images">
             <div class="hero-image-left">
-                <video autoplay muted loop playsinline>
+                <video id="video1" autoplay muted playsinline class="seamless-video active">
+                    <source src="resource/main_video_01.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video id="video2" muted playsinline class="seamless-video">
                     <source src="resource/main_video_01.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
