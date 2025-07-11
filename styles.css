@@ -97,11 +97,11 @@ img, video {
 }
 
 .hero-image-left {
-    background: linear-gradient(135deg, #2dd4bf 0%, #0891b2 100%);
+    background: #ffffff;
 }
 
 .hero-image-right {
-    background: linear-gradient(135deg, #f97316 0%, #dc2626 100%);
+    background: #ffffff;
 }
 
 /* Remove old hero content styles */

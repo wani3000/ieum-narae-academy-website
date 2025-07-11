@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
     });
+    
+
 });
 
 // Smooth scrolling for navigation links
@@ -211,9 +213,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const allTeacherImages = [teacherImg1, teacherImg2, teacherImg3];
     
-    // Set initial active state for teacher2 (Serena)
-    if (teacherImg2) {
-        teacherImg2.classList.add('border-black');
+    // Set initial active state for teacher1 (나래)
+    if (teacherImg1) {
+        teacherImg1.classList.add('border-black');
     }
     
     function updateTeacherInfo(teacher) {
